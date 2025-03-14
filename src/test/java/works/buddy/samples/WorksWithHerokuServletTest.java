@@ -36,6 +36,6 @@ public class WorksWithHerokuServletTest {
         when(response.getWriter()).thenReturn(writer);
 
         servlet.doGet(request, response);
-        assertEquals("WEB APP WORKING", new String( out.toByteArray(), "UTF-8"));
+        assertEquals("Hello\nWelcome to Tomcat server\nThis app is deployed by Bhagyashree!\nThank You!\n", new String(out.toByteArray(), "UTF-8"));
     }
 }
