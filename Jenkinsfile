@@ -1,5 +1,5 @@
 pipeline{
-    agent {label 'angular'}
+    agent any
     stages{
        stage('Git Checkout Stage'){
             steps{
@@ -13,8 +13,8 @@ pipeline{
          }
         stage('SonarQube Analysis Stage') {
             steps{
-                withSonarQubeEnv('sonarqube-server') { 
-                    sh "mvn clean verify sonar:sonar"
+                withSonarQubeEnv('sonar') { 
+                    sh "mvn clean verify sonar:sonar -Dsonar.projectKey=demo-bp"
                 }
             }
         }
