@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'feature-branch', credentialsId: 'github', url: 'https://github.com/bhagyashreep032/jenkins-java-example.git'
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/bhagyashreep032/jenkins-java-example.git'
             }
         }
 
